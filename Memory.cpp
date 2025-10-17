@@ -10,9 +10,10 @@ void BulletsReadMemory()
 	ReadProcessMemory(pHandle, (LPVOID)(gameAddress + offSetToBullets), &BulletsAddress, sizeof(BulletsAddress), NULL);
 	bulletsAddress = BulletsAddress;
 }
+
 void BombsReadMemory()
 {
-	DWORD BombsAddress = NULL;
-	ReadProcessMemory(pHandle, (LPVOID)(gameAddress + offSetToBombs), &BombsAddress, sizeof(BombsAddress), NULL);
-	bombAddress = BombsAddress;
+    DWORD BombsAddress = NULL;
+    ReadProcessMemory(pHandle, (LPVOID)(gameAddress + offSetToBombs), &BombsAddress, sizeof(BombsAddress), NULL);
+    bombAddress = BombsAddress;
 }

@@ -5,26 +5,26 @@
 #include "Offsets.h"
 #include "Global.h"
 
-void BulletsWriteMem()
+void WriteByteBulletsON()
 {
-	int Bullets = 9999;
-	WriteProcessMemory(pHandle, (LPVOID)bulletsAddress, &Bullets, sizeof(Bullets), NULL);
+	std::vector<BYTE> BulletsNOPopcode = { 0x90,0x90};
+	WriteProcessMemory(pHandle, (LPVOID)BulletsDec, BulletsNOPopcode.data(), BulletsNOPopcode.size(), NULL);
 }
 
-void BombsWriteMem()
+void WriteByteBulletsOFF()
 {
-	int Bombs = 9999;
-	WriteProcessMemory(pHandle, (LPVOID)bombAddress, &Bombs, sizeof(Bombs), NULL);
+	std::vector<BYTE> BulletsSourceopcode = { 0xFF,0x08 };
+	WriteProcessMemory(pHandle, (LPVOID)BulletsDec, BulletsSourceopcode.data(), BulletsSourceopcode.size(), NULL);
 }
 
-void BulletsOff()
+void WriteByteBombsON()
 {
-	int Bullets2 = 20;
-	WriteProcessMemory(pHandle, (LPVOID)bulletsAddress, &Bullets2, sizeof(Bullets2), NULL);
+	std::vector<BYTE> BombsNOPopcode = { 0x90,0x90 };
+	WriteProcessMemory(pHandle, (LPVOID)BombsDec, BombsNOPopcode.data(), BombsNOPopcode.size(), NULL);
 }
 
-void BombsOff()
+void WriteByteBombsOFF()
 {
-	int Bombs2 = 0;
-	WriteProcessMemory(pHandle, (LPVOID)bombAddress, &Bombs2, sizeof(Bombs2), NULL);
+	std::vector<BYTE> BombsSourceopcode = { 0xFF,0x08};
+	WriteProcessMemory(pHandle, (LPVOID)BombsDec, BombsSourceopcode.data(), BombsSourceopcode.size(), NULL);
 }

@@ -18,3 +18,5 @@
 #define GAMEWINDOW "AssaultCube"
 #define offSetToBullets 0x00195404
 #define offSetToBombs 0x0018AC00
+#define BulletsDec 0x004C73EF
+#define BombsDec 0x004C7E5D

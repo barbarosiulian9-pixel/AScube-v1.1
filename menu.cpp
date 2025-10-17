@@ -80,13 +80,11 @@ void Menu()
 
                     if (bulletsOn)
                     {
-                        BulletsReadMemory();
-                        BulletsOffsets();
-                        BulletsWriteMem();
+                        WriteByteBulletsON();
                     }
                     else
                     {
-                        BulletsOff(); // <-- вызываем функцию отключения
+                        WriteByteBulletsOFF(); // <-- вызываем функцию отключения
                     }
 
                     Sleep(150);
@@ -100,13 +98,12 @@ void Menu()
 
                     if (bombsOn)
                     {
-                        BombsReadMemory();
-                        BombsOffsets();
-                        BombsWriteMem();
+                        
+                        WriteByteBombsON();
                     }
                     else
                     {
-                        BombsOff(); // <-- вызываем функцию отключения
+                        WriteByteBombsOFF(); // <-- вызываем функцию отключения
                     }
 
                     Sleep(150);

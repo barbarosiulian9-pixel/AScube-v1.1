@@ -10,7 +10,7 @@ int main()
 {
 	if (!AttachToGame())
 	{
-		return 0;
+		std::cout << "Start the Game!";
 	}
 	Menu();
 }

@@ -4,5 +4,3 @@
 
 
 void Menu();
-void MenuBullets();
-void MenuBombs();
