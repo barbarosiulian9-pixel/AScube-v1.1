@@ -3,4 +3,5 @@
 #include "Global.h"
 
 
-void Menu();
+void HandleKeyboardInput(HWND window);
+void RenderMenu();

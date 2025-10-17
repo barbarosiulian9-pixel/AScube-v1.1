@@ -4,6 +4,7 @@
 #include "Base.h"
 #include "Global.h"
 
+
 DWORD GetModuleBaseAddress(TCHAR* lpszModuleName, DWORD pID) {
     DWORD dwModuleBaseAddress = 0;
     HANDLE hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPMODULE, pID);
@@ -52,9 +53,5 @@ bool AttachToGame()
         std::cout << "Failed to get base address!" << std::endl;
         return false;
     }
-
-    std::cout << "Attached to game successfully!" << std::endl;
-    std::cout << "PID: " << pID << std::endl;
-    std::cout << "Base Address: 0x" << std::hex << gameAddress << std::endl;
     return true;
 }
