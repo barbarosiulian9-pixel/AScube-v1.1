@@ -71,3 +71,26 @@ void FastShootHack()
 	}
 }
 
+void ReloadOFF()
+{
+	if (config.ReloadAnimation)
+	{
+		ReloadAnimationON();
+	}
+	else
+	{
+		ReloadAnimationOFF();
+	}
+}
+
+void AutoGun()
+{
+	if (config.Autogun)
+	{
+		AutoGunON();
+	}
+	else
+	{
+		AutoGunOFF();
+	}
+}

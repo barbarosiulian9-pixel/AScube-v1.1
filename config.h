@@ -8,6 +8,8 @@ public:
 	bool Norec = false;
 	bool Gravity = false;
 	bool fastshoot = false;
+	bool ReloadAnimation = false;
+	bool Autogun = false;
 private:
 
 };

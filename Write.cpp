@@ -66,3 +66,27 @@ void WriteByteFastShootOFF()
 	WriteProcessMemory(pHandle, (LPVOID)FastShoot, FastShootSource.data(), FastShootSource.size(), NULL);
 }
 
+void ReloadAnimationON()
+{
+	std::vector<BYTE> ReloadNOP = { 0x90,0x90 };
+	WriteProcessMemory(pHandle, (LPVOID)NoReloadAnimation, ReloadNOP.data(), ReloadNOP.size(), NULL);
+}
+
+void ReloadAnimationOFF()
+{
+	std::vector<BYTE> Reloadsource = { 0x01,0x01 };
+	WriteProcessMemory(pHandle, (LPVOID)NoReloadAnimation, Reloadsource.data(), Reloadsource.size(), NULL);
+}
+
+void AutoGunON()
+{
+	std::vector<BYTE> AutoGunNOP = { 0x90,0x90,0x90,0x90,0x90,0x90,0x90 };
+	WriteProcessMemory(pHandle, (LPVOID)AutoGUN, AutoGunNOP.data(), AutoGunNOP.size(), NULL);
+}//C6 80 04 02 00 00 00    
+
+
+void AutoGunOFF()
+{
+	std::vector<BYTE> AutoGunSource = { 0xC6,0x80,0x04,0x02,0x00,0x00,0x00 };
+	WriteProcessMemory(pHandle, (LPVOID)AutoGUN, AutoGunSource.data(), AutoGunSource.size(), NULL);
+}

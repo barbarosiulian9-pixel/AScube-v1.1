@@ -28,3 +28,5 @@
 #define NoRecoil 0x004C2EC3
 #define GravityHack 0x4C2375
 #define FastShoot 0x004C721C
+#define NoReloadAnimation 0x004C8FC7
+#define AutoGUN 0x004C731A

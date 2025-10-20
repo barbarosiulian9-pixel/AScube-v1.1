@@ -7,3 +7,5 @@ void Bullets();
 void Norec();
 void Gravity();
 void FastShootHack();
+void ReloadOFF();
+void AutoGun();

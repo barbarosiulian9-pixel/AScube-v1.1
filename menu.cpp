@@ -19,32 +19,49 @@ void HandleKeyboardInput(HWND window) {
 
 void RenderMenu() {
 	ImGui::Begin("External Forever");
-
-	if (ImGui::Checkbox("Infinite Ammo", &config.Bullets))
+	if (ImGui::BeginTabBar(""))
 	{
-		Bullets();
+		if(ImGui::BeginTabItem("Weapon"))
+		{ 
+			if (ImGui::Checkbox("Infinite Ammo", &config.Bullets))
+			{
+				Bullets();
+			}
+			if (ImGui::Checkbox("Infinite Bombs", &config.Bombs))
+			{
+				Bombs();
+			}
+
+			if (ImGui::Checkbox("No recoil", &config.Norec))
+			{
+				Norec();
+			}
+
+			if (ImGui::Checkbox("Gravity Hack", &config.Gravity))
+			{
+				Gravity();
+			}
+
+			if (ImGui::Checkbox("Fast Shoot", &config.fastshoot))
+			{
+				FastShootHack();
+			}
+
+			if(ImGui::Checkbox("Auto Gun", &config.Autogun))
+			{
+				AutoGun();
+			}
+			ImGui::EndTabItem();
+		}
+		if (ImGui::BeginTabItem("Visuals"))
+		{
+			if (ImGui::Checkbox("No Reload Animation", &config.ReloadAnimation))
+			{
+				ReloadOFF();
+			}
+			ImGui::EndTabItem();
+		}
 	}
-
-	if (ImGui::Checkbox("Infinite Bombs", &config.Bombs))
-	{
-		Bombs();
-	}
-
-	if (ImGui::Checkbox("No recoil", &config.Norec))
-	{
-		Norec();
-	}
-
-	if (ImGui::Checkbox("Gravity Hack", &config.Gravity))
-	{
-		Gravity();
-	}
-
-	if (ImGui::Checkbox("Fast Shoot", &config.fastshoot))
-	{
-		FastShootHack();
-	}
-
-
+	ImGui::EndTabBar();
 	ImGui::End();
 }

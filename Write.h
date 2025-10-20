@@ -16,3 +16,7 @@ void WriteByteGravityJumpON();
 void WriteByteGravityJumpOFF();
 void WriteByteFastShootON();
 void WriteByteFastShootOFF();
+void ReloadAnimationON();
+void ReloadAnimationOFF();
+void AutoGunON();
+void AutoGunOFF();
